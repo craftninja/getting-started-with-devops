@@ -1,13 +1,13 @@
 # Getting Started with DevOps
 
-Continuous Integration and Continuous Deployment is essential for companies that want their developers to be able to deploy code quickly, efficiently, and with minimal application downtime. 
+Continuous Integration and Continuous Deployment is essential for companies that want their developers to be able to deploy code quickly, efficiently, and with minimal application downtime.
 
-In this workshop, you will get a taste of what it takes to setup a CI/CD pipeline using CircleCI and Heroku. For the workshop, we will provide you with a working application with a functional test suite. 
+In this workshop, you will get a taste of what it takes to setup a CI/CD pipeline using CircleCI and Heroku. For the workshop, we will provide you with a working application with a functional test suite.
 
 By the end of this workshop, you will be able to:
 1. Manually run the application test suite
 1. Manually deploy the application to Heroku
-1. Configure CircleCI to run your test suite 
+1. Configure CircleCI to run your test suite
 1. (Stretch) Configure CircleCI to deploy your app to Heroku if all tests are passing
 
 ## Prerequisite
@@ -23,8 +23,21 @@ By the end of this workshop, you will be able to:
 1. Configure files
     - Copy and paste `config_template.yml`
     - Change docker image type to cypress/base:8
-    - Add the commands you use locally 
+    - Add the commands you use locally
     - Commit and push; check tests on CircleCI
 
+## Setup
 
+### Manually Deploy to Heroku
 
+* fork, clone, `npm install`
+* `heroku create` and `git push heroku master`
+
+### Setup CircleCI to deploy
+
+* Go to circleci, login, and go to the dashboard
+* Add a project, and select this fork
+* `$ mkdir .circleci`
+* `$ touch .circleci/config.yaml`
+* copy ./config_template.yaml to ./circleci/config.yaml
+* update the file with docker and run command, and commit and push
